@@ -1,0 +1,102 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: #fff9f6;
+    color: #3e2d1f;
+  }
+  
+  .necklace-hero {
+    background: linear-gradient(to right, #ffe2e0, #fff4f2);
+    padding: 80px 20px;
+    text-align: center;
+  }
+  
+  .hero-text h1 {
+    font-size: 2.8rem;
+    margin-bottom: 10px;
+  }
+  
+  .hero-text p {
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin: auto;
+  }
+  
+  .products-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 40px 20px;
+  }
+  
+  .product-card {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    padding: 20px;
+    transition: transform 0.3s;
+  }
+  
+  .product-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .product-card img {
+    width: 100%;
+    border-radius: 12px;
+    margin-bottom: 15px;
+  }
+  
+  .product-card h2 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+  }
+  
+  .product-card p {
+    font-size: 1rem;
+    margin-bottom: 15px;
+  }
+  
+  .buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  .cart-btn, .buy-btn, .order-btn {
+    flex: 1;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .cart-btn {
+    background: #f9d4c9;
+  }
+  
+  .buy-btn {
+    background: #e3bfa8;
+  }
+  
+  .order-btn {
+    background: #c29f91;
+  }
+  
+  .cart-btn:hover, .buy-btn:hover, .order-btn:hover {
+    filter: brightness(1.1);
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .buttons {
+      flex-direction: column;
+    }
+  
+    .cart-btn, .buy-btn, .order-btn {
+      width: 100%;
+    }
+  }
+  

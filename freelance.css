@@ -1,0 +1,318 @@
+:root {
+    --color-primary: #3B82F6;
+    --color-primary-light: #60A5FA;
+    --color-success: #10B981;
+    --color-warning: #F59E0B;
+    --color-danger: #EF4444;
+    --color-gray-50: #F9FAFB;
+    --color-gray-100: #F3F4F6;
+    --color-gray-200: #E5E7EB;
+    --color-gray-300: #D1D5DB;
+    --color-gray-400: #9CA3AF;
+    --color-gray-500: #6B7280;
+    --color-gray-600: #4B5563;
+    --color-gray-700: #374151;
+    --color-gray-800: #1F2937;
+    --color-gray-900: #111827;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: var(--color-gray-50);
+    color: var(--color-gray-900);
+    line-height: 1.5;
+  }
+  
+  .container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+  
+  .header {
+    background-color: white;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  }
+  
+  .header-content {
+    height: 64px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--color-gray-900);
+  }
+  
+  .notification-bar {
+    position: relative;
+  }
+  
+  .notification-button {
+    position: relative;
+    padding: 0.5rem;
+    background: none;
+    border: none;
+    color: var(--color-gray-600);
+    cursor: pointer;
+    border-radius: 9999px;
+    transition: all 0.2s;
+  }
+  
+  .notification-button:hover {
+    background-color: var(--color-gray-100);
+    color: var(--color-primary);
+  }
+  
+  .notification-badge {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 20px;
+    height: 20px;
+    padding: 0 6px;
+    background-color: var(--color-danger);
+    color: white;
+    font-size: 0.75rem;
+    font-weight: bold;
+    border-radius: 9999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .notification-badge.hidden {
+    display: none;
+  }
+  
+  .notification-panel {
+    position: fixed;
+    inset: 0;
+    z-index: 50;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    margin-left: -20rem;
+  }
+  
+  @media (min-width: 1024px) {
+    .notification-panel {
+      position: absolute;
+      top: 48px;
+      right: 0;
+      width: 384px;
+      max-height: 480px;
+      inset: auto;
+      border-radius: 0.5rem;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    }
+  }
+  
+  .notification-panel.hidden {
+    display: none;
+  }
+  
+  .notification-header {
+    padding: 1rem;
+    border-bottom: 1px solid var(--color-gray-200);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .notification-header h3 {
+    font-size: 1.125rem;
+    font-weight: 600;
+  }
+  
+  .notification-actions {
+    display: flex;
+    gap: 0.5rem;
+  }
+  
+  #mark-all-read {
+    background: none;
+    border: none;
+    color: var(--color-primary);
+    font-size: 0.875rem;
+    cursor: pointer;
+  }
+  
+  .close-button {
+    background: none;
+    border: none;
+    color: var(--color-gray-500);
+    cursor: pointer;
+    padding: 0.25rem;
+  }
+  
+  .platform-filters {
+    padding: 0.75rem 1rem;
+    display: flex;
+    gap: 0.75rem;
+    overflow-x: auto;
+    background-color: var(--color-gray-50);
+    border-bottom: 1px solid var(--color-gray-200);
+  }
+  
+  .platform-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.5rem;
+    background: none;
+    border: none;
+    border-radius: 0.375rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    min-width: 64px;
+  }
+  
+  .platform-button:hover {
+    background-color: var(--color-gray-100);
+  }
+  
+  .platform-button.active {
+    background-color: var(--color-primary-light);
+    color: white;
+  }
+  
+  .platform-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 9999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.25rem;
+  }
+  
+  .fiverr-bg { background-color: #1DBF73; color: white; }
+  .upwork-bg { background-color: #14A800; color: white; }
+  .paypal-bg { background-color: #003087; color: white; }
+  .cgtrader-bg { background-color: #7B61FF; color: white; }
+  
+  .platform-button span {
+    font-size: 0.75rem;
+    white-space: nowrap;
+  }
+  
+  .notifications-list {
+    flex: 1;
+    overflow-y: auto;
+  }
+  
+  .notification-item {
+    padding: 1rem;
+    border-bottom: 1px solid var(--color-gray-200);
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .notification-item:hover {
+    background-color: var(--color-gray-50);
+  }
+  
+  .notification-item.unread {
+    background-color: #EBF5FF;
+  }
+  
+  .notification-content {
+    display: flex;
+    gap: 0.75rem;
+  }
+  
+  .notification-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 9999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  
+  .notification-details {
+    flex: 1;
+  }
+  
+  .notification-header-content {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.25rem;
+  }
+  
+  .notification-title {
+    font-weight: 500;
+    color: var(--color-gray-900);
+  }
+  
+  .notification-time {
+    font-size: 0.75rem;
+    color: var(--color-gray-500);
+  }
+  
+  .notification-message {
+    color: var(--color-gray-600);
+    font-size: 0.875rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .notification-footer {
+    padding: 0.75rem;
+    background-color: var(--color-gray-50);
+    border-top: 1px solid var(--color-gray-200);
+    text-align: center;
+  }
+  
+  .view-all {
+    color: var(--color-primary);
+    text-decoration: none;
+    font-size: 0.875rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.25rem;
+  }
+  
+  .notification-status {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    font-size: 0.75rem;
+  }
+  
+  .status-completed { color: var(--color-success); }
+  .status-pending { color: var(--color-warning); }
+  .status-urgent { color: var(--color-danger); }
+  
+  .main {
+    padding: 2rem 0;
+  }
+  
+  .content-card {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  }
+  
+  .content-card h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--color-gray-900);
+  }
+  
+  .content-card p {
+    color: var(--color-gray-600);
+  }

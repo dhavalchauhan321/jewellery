@@ -1,0 +1,138 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  body {
+    background: #fffefc;
+    color: #3b2e1c;
+  }
+  
+  .hero {
+    background: url('https://i.ibb.co/ZzxbT6RM/mahbod-akhzami-Bme-JAYo-Eg-unsplash.jpg') center/cover no-repeat;
+    padding: 100px 20px;
+    text-align: center;
+    color: #3b2e1c;
+    position: relative;
+  }
+  
+  
+  /* Optional: overlay for readability */
+  .hero::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 245, 240, 0.7); /* soft tint */
+    z-index: 1;
+  }
+  
+  .hero-content {
+    position: relative;
+    z-index: 2;
+  }
+  
+  
+  /* About Section */
+  .about-section {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 60px 20px;
+    gap: 2rem;
+    justify-content: center;
+  }
+  
+  .about-text {
+    flex: 1 1 300px;
+    max-width: 500px;
+  }
+  
+  .about-text h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .about-image img {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  }
+  
+  /* Gallery */
+  .gallery {
+    padding: 60px 20px;
+    text-align: center;
+  }
+  
+  .gallery h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+  }
+  
+  .gallery-grid img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+  }
+  
+  .gallery-grid img:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Testimonials */
+  .testimonials {
+    padding: 60px 20px;
+    background: #fff0f5;
+    text-align: center;
+  }
+  
+  .testimonials h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .slider {
+    position: relative;
+    max-width: 600px;
+    margin: 0 auto;
+    height: 100px;
+    overflow: hidden;
+  }
+  
+  .slide {
+    opacity: 0;
+    position: absolute;
+    transition: opacity 1s ease-in-out;
+    font-style: italic;
+    font-size: 1.1rem;
+  }
+  
+  .slide.active {
+    opacity: 1;
+    position: relative;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .about-section {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .about-image img {
+      max-width: 100%;
+    }
+  }
+  

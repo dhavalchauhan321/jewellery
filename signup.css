@@ -1,0 +1,111 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  
+  
+  .signup-section {
+    width: 100%;
+    padding: 2rem;
+    background: url('https://t3.ftcdn.net/jpg/05/14/38/92/360_F_514389254_Jt4s2ESrYsqEhpiNKJvEyV27bRO9ypN2.jpg') no-repeat center  center/cover;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+  }
+  
+  .signup-container {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    padding: 2.5rem;
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+    color: white;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 1s ease;
+    
+  }
+  
+  
+  .signup-container h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .signup-container p {
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .signup-form input {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: none;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+
+
+  }
+  
+  .signup-form input:focus,
+  .signup-form input:hover {
+    background: rgba(255, 255, 255, 0.3);
+    outline: none;
+    box-shadow: 0 0 8px #ffc107;
+  }
+ 
+  
+  .signup-form input:hover {
+    background: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 8px #ffc107;
+  }
+  
+  .signup-form button {
+    width: 100%;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 30px;
+    background: linear-gradient(to right, #d4af37, #ffd700);
+    color: #1a1a1a;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .signup-form button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px #ffd700;
+  }
+  
+  .small-text {
+    font-size: 0.8rem;
+    margin-top: 1rem;
+  }
+  
+  .small-text a {
+    color: #ffe6e6;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  @keyframes fadeIn {
+    from {opacity: 0; transform: translateY(20px);}
+    to {opacity: 1; transform: translateY(0);}
+  }
+  
+  @media (max-width: 480px) {
+    .signup-container {
+      padding: 2rem 1.5rem;
+    }
+  }

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us - Jewelify</title>
+  <link rel="stylesheet" href="contact.css"/>
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  
+</head>
+<body>
+
+  <section class="contact-hero">
+    <div class="contact-text" data-aos="fade-up">
+      <h1>Get in Touch</h1>
+      <p>We’d love to hear from you. Whether you have a question or a custom design in mind, our team is here to help.</p>
+    </div>
+  </section>
+
+  <section class="contact-container" data-aos="fade-right">
+    <div class="form-section">
+      <form action="https://api.web3forms.com/submit" method="POST">
+        <h2>Contact Form</h2>
+        <input type="hidden" name="access_key" value="b7d1a101-39a5-4317-adf9-c93c8433f39f">
+        <input type="text" name="name" placeholder="Your Name" required/>
+        <input type="email" name="email" placeholder="Your Email" required/>
+        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message <i class="fas fa-paper-plane"></i></button>
+      </form>
+    </div>
+    <div class="info-section" data-aos="fade-left">
+      <h2>Contact Info</h2>
+      <p><i class="fas fa-phone"></i> +91 98765 43210</p>
+      <p><i class="fas fa-envelope"></i> contact@jewelify.com</p>
+      <p><i class="fas fa-map-marker-alt"></i> 123 Diamond Street, Surat, India</p>
+      <div class="socials">
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-pinterest-p"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>AOS.init();</script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Us - Jewelify</title>
+  <link rel="stylesheet" href="about.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet"/>
+</head>
+<body>
+
+  <section class="hero">
+    <div class="hero-content" data-aos="fade-up">
+      <h1>About Jewelify</h1>
+      <p>Crafting timeless elegance for every moment.</p>
+    </div>
+  </section>
+
+  <section class="about-section" data-aos="fade-right">
+    <div class="about-text">
+      <h2>Who We Are</h2>
+      <p>Jewelify is a luxury jewelry brand known for elegant craftsmanship and timeless beauty. From handcrafted rings to statement necklaces, each piece tells a story of grace and refinement.</p>
+    </div>
+    <div class="about-image">
+      <img src="https://static.vecteezy.com/system/resources/thumbnails/036/431/034/small_2x/ai-generated-gold-necklace-on-display-stand-elegant-jewelry-photography-png.png" alt="Jewelry"/>
+    </div>
+  </section>
+
+  <section class="gallery" data-aos="zoom-in-up">
+    <h2>Our Collection</h2>
+    <div class="gallery-grid">
+      <img src="https://i.ibb.co/DHB8xS7q/Chat-GPT-Image-Apr-29-2025-10-20-02-AM.png" alt="Ring"/>
+      <img src="https://i.ibb.co/zgJkgkH/Chat-GPT-Image-Apr-29-2025-10-24-37-AM.png" alt="Bracelet"/>
+      <img src="https://i.ibb.co/BKrYSJFR/Chat-GPT-Image-Apr-29-2025-10-32-21-AM.png" alt="Earrings"/>
+      <img src="https://i.ibb.co/Yww91Pw/Chat-GPT-Image-Apr-29-2025-10-34-18-AM.png" alt="Necklace"/>
+    </div>
+    
+
+  <section class="testimonials" data-aos="fade-up">
+    <h2>What Our Clients Say</h2>
+    <div class="slider">
+      <div class="slide active">“Absolutely stunning designs. I wore their necklace at my wedding!” — Anjali</div>
+      <div class="slide">“The craftsmanship is beyond words. Love every piece!” — Kavita</div>
+      <div class="slide">“Unique, timeless, and elegant — everything I wanted.” — Sara</div>
+    </div>
+  </section>
+
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init();
+    let slides = document.querySelectorAll('.slide');
+    let index = 0;
+    setInterval(() => {
+      slides[index].classList.remove('active');
+      index = (index + 1) % slides.length;
+      slides[index].classList.add('active');
+    }, 3000);
+  </script>
+</body>
+</html>
