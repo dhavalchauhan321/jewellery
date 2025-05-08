@@ -1,0 +1,1632 @@
+:root {
+    --color-black: #0a0a0a;
+    --color-dark: #151515;
+    --color-gray-dark: #2a2a2a;
+    --color-gray: #3d3d3d;
+    --color-gray-light: #5a5a5a;
+    --color-white: #f5f5f5;
+    --color-gold: #d4af37;
+    --color-gold-light: #f1cf65;
+    --color-gold-dark: #9e7c22;
+    --color-accent-1: #700d53; /* Deep magenta */
+    --color-accent-2: #0d569e; /* Deep blue */
+    --color-accent-3: #0d7056; /* Deep emerald */
+    
+    --font-display: 'Cormorant Garamond', serif;
+    --font-body: 'Inter', sans-serif;
+    
+    --transition-slow: 0.5s ease;
+    --transition-medium: 0.3s ease;
+    --transition-fast: 0.15s ease;
+    
+    --spacing-xs: 8px;
+    --spacing-sm: 16px;
+    --spacing-md: 24px;
+    --spacing-lg: 40px;
+    --spacing-xl: 64px;
+    --spacing-xxl: 96px;
+    
+    --shadow-subtle: 0 2px 10px rgba(0, 0, 0, 0.05);
+    --shadow-medium: 0 4px 20px rgba(0, 0, 0, 0.1);
+    --shadow-strong: 0 10px 30px rgba(0, 0, 0, 0.15);
+    --shadow-inset: inset 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  *, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  html {
+    font-size: 62.5%; /* 10px if browser default is 16px */
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: var(--font-body);
+    font-size: 1.6rem;
+    line-height: 1.5;
+    color: var(--color-white);
+    background-color: var(--color-black);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    cursor: none; /* Hide default cursor since we'll use a custom one */
+  }
+  
+  a {
+    color: inherit;
+    text-decoration: none;
+    transition: color var(--transition-medium);
+  }
+  
+  a:hover {
+    color: var(--color-gold);
+  }
+  
+  ul, ol {
+    list-style: none;
+  }
+  
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  button {
+    background: none;
+    border: none;
+    color: inherit;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: inherit;
+    padding: 0;
+    transition: all var(--transition-medium);
+  }
+  
+  input, textarea {
+    font-family: var(--font-body);
+    border: none;
+    outline: none;
+  }
+  
+  /* Typography */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    font-weight: 300;
+    line-height: 1.2;
+    margin: 0 0 var(--spacing-sm);
+  }
+  
+  h1 {
+    font-size: 6rem;
+  }
+  
+  h2 {
+    font-size: 4.2rem;
+  }
+  
+  h3 {
+    font-size: 3.2rem;
+  }
+  
+  h4 {
+    font-size: 2.4rem;
+  }
+  
+  p {
+    margin: 0 0 var(--spacing-md);
+  }
+  
+  /* Layout Classes */
+  .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+  }
+  
+  /* Header Styles */
+  .site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: var(--spacing-md) var(--spacing-lg);
+    transition: background-color var(--transition-medium);
+    background-color: rgba(10, 10, 10, 0.85);
+    backdrop-filter: blur(10px);
+  }
+  
+  .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo {
+    font-family: var(--font-display);
+    font-size: 2.4rem;
+    font-weight: 300;
+    letter-spacing: 3px;
+  }
+  
+  .logo span {
+    color: var(--color-gold);
+    font-weight: 700;
+  }
+  
+  .main-nav ul {
+    display: flex;
+    gap: var(--spacing-md);
+  }
+  
+  .nav-link {
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: var(--spacing-xs) 0;
+    position: relative;
+  }
+  
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: var(--color-gold);
+    transition: width var(--transition-medium);
+  }
+  
+  .nav-link:hover::after,
+  .nav-link.active::after {
+    width: 100%;
+  }
+  
+  .nav-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 24px;
+    height: 16px;
+    cursor: pointer;
+  }
+  
+  .nav-toggle span {
+    display: block;
+    height: 2px;
+    width: 100%;
+    background-color: var(--color-white);
+    transition: transform var(--transition-medium), opacity var(--transition-medium);
+  }
+  
+  /* Hero Section */
+  .hero {
+    height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    background: linear-gradient(to bottom, var(--color-dark), var(--color-black));
+  }
+  
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://images.pexels.com/photos/9770349/pexels-photo-9770349.jpeg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.2;
+    z-index: 0;
+  }
+  
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    padding: 0 var(--spacing-md);
+  }
+  
+  .hero-title {
+    font-size: 8rem;
+    margin-bottom: var(--spacing-md);
+    line-height: 1;
+  }
+  
+  .hero-title span {
+    display: block;
+    color: var(--color-gold);
+    font-size: 12rem;
+    margin-top: var(--spacing-xs);
+  }
+  
+  .hero-subtitle {
+    font-size: 2rem;
+    max-width: 600px;
+    margin: 0 auto var(--spacing-lg);
+    color: rgba(255, 255, 255, 0.8);
+  }
+  
+  /* Footer Styles */
+  .site-footer {
+    background-color: var(--color-dark);
+    padding: var(--spacing-xl) var(--spacing-lg) var(--spacing-lg);
+    margin-top: var(--spacing-xxl);
+  }
+  
+  .footer-content {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    gap: var(--spacing-xl);
+    margin-bottom: var(--spacing-xl);
+  }
+  
+  .footer-logo {
+    font-family: var(--font-display);
+    font-size: 2.4rem;
+    font-weight: 300;
+    letter-spacing: 3px;
+    margin-bottom: var(--spacing-md);
+  }
+  
+  .footer-logo span {
+    color: var(--color-gold);
+    font-weight: 700;
+  }
+  
+  .footer-links {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-lg);
+  }
+  
+  .footer-column h3 {
+    font-size: 1.8rem;
+    margin-bottom: var(--spacing-md);
+    color: var(--color-gold);
+  }
+  
+  .footer-column ul li {
+    margin-bottom: var(--spacing-xs);
+  }
+  
+  .footer-column ul li a {
+    font-size: 1.4rem;
+    color: rgba(255, 255, 255, 0.7);
+  }
+  
+  .footer-column ul li a:hover {
+    color: var(--color-gold);
+  }
+  
+  .footer-newsletter h3 {
+    font-size: 1.8rem;
+    margin-bottom: var(--spacing-md);
+    color: var(--color-gold);
+  }
+  
+  .footer-newsletter p {
+    font-size: 1.4rem;
+    margin-bottom: var(--spacing-md);
+    color: rgba(255, 255, 255, 0.7);
+  }
+  
+  .newsletter-form {
+    display: flex;
+  }
+  
+  .newsletter-form input {
+    flex: 1;
+    padding: var(--spacing-sm);
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--color-white);
+  }
+  
+  .newsletter-form button {
+    padding: var(--spacing-sm) var(--spacing-md);
+    background-color: var(--color-gold);
+    color: var(--color-black);
+    font-weight: 600;
+  }
+  
+  .newsletter-form button:hover {
+    background-color: var(--color-gold-light);
+  }
+  
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: var(--spacing-lg);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .footer-bottom p {
+    font-size: 1.4rem;
+    color: rgba(255, 255, 255, 0.5);
+    margin: 0;
+  }
+  
+  .footer-social {
+    display: flex;
+    gap: var(--spacing-md);
+  }
+  
+  .social-link {
+    font-size: 1.4rem;
+    color: rgba(255, 255, 255, 0.5);
+  }
+  
+  .social-link:hover {
+    color: var(--color-gold);
+  }
+  .ring-showcase {
+    padding: var(--spacing-xxl) var(--spacing-lg);
+    position: relative;
+    background-color: var(--color-black);
+  }
+  
+  .ring-showcase::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(circle at 20% 30%, rgba(112, 13, 83, 0.15) 0%, transparent 50%),
+                      radial-gradient(circle at 80% 70%, rgba(13, 86, 158, 0.15) 0%, transparent 50%);
+    pointer-events: none;
+  }
+  
+  /* Filter Styles */
+  .filter-container {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-xl);
+    margin-bottom: var(--spacing-xl);
+    padding: var(--spacing-md) var(--spacing-lg);
+    background-color: rgba(10, 10, 10, 0.7);
+    backdrop-filter: blur(8px);
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+  }
+  
+  .filter-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .filter-group h3 {
+    font-size: 1.8rem;
+    font-weight: 300;
+    margin-bottom: var(--spacing-sm);
+    color: var(--color-gold);
+  }
+  
+  .filter-btn {
+    font-size: 1.4rem;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    margin: 0 var(--spacing-xs) var(--spacing-xs);
+    border: 1px solid transparent;
+    background-color: transparent;
+    color: rgba(255, 255, 255, 0.6);
+    border-radius: 4px;
+    transition: all var(--transition-medium);
+  }
+  
+  .filter-btn:hover {
+    color: var(--color-white);
+    border-color: rgba(255, 255, 255, 0.2);
+  }
+  
+  .filter-btn.active {
+    background-color: var(--color-gold);
+    color: var(--color-black);
+    font-weight: 600;
+  }
+  
+  /* Rings Container */
+  .rings-container {
+    position: relative;
+    margin: var(--spacing-xl) auto;
+    max-width: 1400px;
+    perspective: 1000px;
+    padding: var(--spacing-xl) 0;
+  }
+  
+  .rings-orbit {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+    transform-style: preserve-3d;
+    transition: transform 1s ease;
+  }
+  
+  /* Ring Item */
+  .ring-item {
+    position: relative;
+    background-color: rgba(26, 26, 26, 0.6);
+    backdrop-filter: blur(10px);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    transition: transform var(--transition-medium), box-shadow var(--transition-medium);
+    transform-style: preserve-3d;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+  }
+  
+  .ring-item:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 20px rgba(212, 175, 55, 0.2);
+    z-index: 10;
+  }
+  
+  .ring-image-container {
+    position: relative;
+    width: 100%;
+    padding-top: 100%;
+    overflow: hidden;
+  }
+  
+  .ring-image-container img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-slow);
+  }
+  
+  .ring-item:hover .ring-image-container img {
+    transform: scale(1.1);
+  }
+  
+  .ring-hover-effect {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, transparent 50%, rgba(0, 0, 0, 0.5) 100%);
+    opacity: 0;
+    transition: opacity var(--transition-medium);
+  }
+  
+  .ring-item:hover .ring-hover-effect {
+    opacity: 1;
+  }
+  
+  .ring-details {
+    padding: var(--spacing-md);
+    position: relative;
+    background: linear-gradient(to bottom, rgba(26, 26, 26, 0.9), rgba(10, 10, 10, 0.95));
+    border-top: 1px solid rgba(212, 175, 55, 0.2);
+  }
+  
+  .ring-details h2 {
+    font-size: 2.4rem;
+    margin-bottom: var(--spacing-xs);
+    color: var(--color-white);
+  }
+  
+  .ring-description {
+    font-size: 1.4rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: var(--spacing-md);
+    line-height: 1.6;
+    height: 4.5em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+  }
+  
+  .ring-meta {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: var(--spacing-md);
+  }
+  
+  .ring-price {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--color-gold);
+  }
+  
+  .ring-material {
+    font-size: 1.4rem;
+    color: rgba(255, 255, 255, 0.6);
+  }
+  
+  .view-details-btn {
+    width: 100%;
+    padding: var(--spacing-sm);
+    background-color: transparent;
+    border: 1px solid var(--color-gold);
+    color: var(--color-gold);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 4px;
+    transition: all var(--transition-medium);
+  }
+  
+  .view-details-btn:hover {
+    background-color: var(--color-gold);
+    color: var(--color-black);
+  }
+  
+  /* Modal Styles */
+  .ring-detail-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(10px);
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity var(--transition-medium), visibility var(--transition-medium);
+  }
+  
+  .ring-detail-modal.active {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .modal-content {
+    position: relative;
+    width: 90%;
+    max-width: 1200px;
+    max-height: 90vh;
+    background-color: var(--color-dark);
+    border-radius: 8px;
+    overflow: auto;
+    transform: translateY(30px);
+    transition: transform var(--transition-medium);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+  }
+  
+  .ring-detail-modal.active .modal-content {
+    transform: translateY(0);
+  }
+  
+  .close-modal {
+    position: absolute;
+    top: var(--spacing-md);
+    right: var(--spacing-md);
+    font-size: 3rem;
+    color: rgba(255, 255, 255, 0.6);
+    z-index: 10;
+  }
+  
+  .close-modal:hover {
+    color: var(--color-white);
+  }
+  
+  .ring-detail-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-lg);
+    padding: var(--spacing-lg);
+  }
+  
+  .ring-detail-image {
+    position: relative;
+    width: 100%;
+    border-radius: 4px;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+  
+  .ring-detail-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    aspect-ratio: 1;
+  }
+  
+  .ring-angle-controls {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-md);
+  }
+  
+  .angle-btn {
+    padding: var(--spacing-xs) var(--spacing-md);
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    color: rgba(255, 255, 255, 0.7);
+    transition: all var(--transition-medium);
+  }
+  
+  .angle-btn:hover,
+  .angle-btn.active {
+    background-color: var(--color-gold);
+    color: var(--color-black);
+  }
+  
+  .ring-detail-info {
+    padding: var(--spacing-md) 0;
+  }
+  
+  .detail-title {
+    font-size: 3.6rem;
+    margin-bottom: var(--spacing-md);
+    color: var(--color-white);
+  }
+  
+  .detail-description {
+    font-size: 1.6rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: var(--spacing-lg);
+  }
+  
+  .detail-specs {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+    padding: var(--spacing-md);
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+  }
+  
+  .spec-item {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .spec-label {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: rgba(255, 255, 255, 0.5);
+    margin-bottom: var(--spacing-xs);
+  }
+  
+  .spec-value {
+    font-size: 1.6rem;
+    color: var(--color-white);
+  }
+  
+  .detail-price {
+    font-size: 3rem;
+    font-weight: 600;
+    color: var(--color-gold);
+    margin-bottom: var(--spacing-lg);
+  }
+  
+  .detail-actions {
+    display: flex;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-xl);
+  }
+  
+  .add-to-cart,
+  .add-to-wishlist {
+    padding: var(--spacing-md) var(--spacing-lg);
+    border-radius: 4px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  .add-to-cart {
+    background-color: var(--color-gold);
+    color: var(--color-black);
+    flex: 2;
+  }
+  
+  .add-to-cart:hover {
+    background-color: var(--color-gold-light);
+  }
+  
+  .add-to-wishlist {
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: rgba(255, 255, 255, 0.7);
+    flex: 1;
+  }
+  
+  .add-to-wishlist:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--color-white);
+  }
+  
+  .detail-extras {
+    margin-top: var(--spacing-xl);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: var(--spacing-lg);
+  }
+  
+  .extra-item {
+    margin-bottom: var(--spacing-lg);
+  }
+  
+  .extra-item h4 {
+    font-size: 1.8rem;
+    color: var(--color-gold);
+    margin-bottom: var(--spacing-sm);
+  }
+  
+  .extra-item p {
+    font-size: 1.4rem;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.6;
+  }
+  
+  /* Ring data container */
+  .ring-data {
+    display: none;
+  }
+  
+  /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+  
+  /* Document
+     ========================================================================== */
+  
+  /**
+   * 1. Correct the line height in all browsers.
+   * 2. Prevent adjustments of font size after orientation changes in iOS.
+   */
+  
+  html {
+    line-height: 1.15; /* 1 */
+    -webkit-text-size-adjust: 100%; /* 2 */
+  }
+  
+  /* Sections
+     ========================================================================== */
+  
+  /**
+   * Remove the margin in all browsers.
+   */
+  
+  body {
+    margin: 0;
+  }
+  
+  /**
+   * Render the `main` element consistently in IE.
+   */
+  
+  main {
+    display: block;
+  }
+  
+  /**
+   * Correct the font size and margin on `h1` elements within `section` and
+   * `article` contexts in Chrome, Firefox, and Safari.
+   */
+  
+  h1 {
+    font-size: 2em;
+    margin: 0.67em 0;
+  }
+  
+  /* Grouping content
+     ========================================================================== */
+  
+  /**
+   * 1. Add the correct box sizing in Firefox.
+   * 2. Show the overflow in Edge and IE.
+   */
+  
+  hr {
+    box-sizing: content-box; /* 1 */
+    height: 0; /* 1 */
+    overflow: visible; /* 2 */
+  }
+  
+  /**
+   * 1. Correct the inheritance and scaling of font size in all browsers.
+   * 2. Correct the odd `em` font sizing in all browsers.
+   */
+  
+  pre {
+    font-family: monospace, monospace; /* 1 */
+    font-size: 1em; /* 2 */
+  }
+  
+  /* Text-level semantics
+     ========================================================================== */
+  
+  /**
+   * Remove the gray background on active links in IE 10.
+   */
+  
+  a {
+    background-color: transparent;
+  }
+  
+  /**
+   * 1. Remove the bottom border in Chrome 57-
+   * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+   */
+  
+  abbr[title] {
+    border-bottom: none; /* 1 */
+    text-decoration: underline; /* 2 */
+    text-decoration: underline dotted; /* 2 */
+  }
+  
+  /**
+   * Add the correct font weight in Chrome, Edge, and Safari.
+   */
+  
+  b,
+  strong {
+    font-weight: bolder;
+  }
+  
+  /**
+   * 1. Correct the inheritance and scaling of font size in all browsers.
+   * 2. Correct the odd `em` font sizing in all browsers.
+   */
+  
+  code,
+  kbd,
+  samp {
+    font-family: monospace, monospace; /* 1 */
+    font-size: 1em; /* 2 */
+  }
+  
+  /**
+   * Add the correct font size in all browsers.
+   */
+  
+  small {
+    font-size: 80%;
+  }
+  
+  /**
+   * Prevent `sub` and `sup` elements from affecting the line height in
+   * all browsers.
+   */
+  
+  sub,
+  sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+  }
+  
+  sub {
+    bottom: -0.25em;
+  }
+  
+  sup {
+    top: -0.5em;
+  }
+  
+  /* Embedded content
+     ========================================================================== */
+  
+  /**
+   * Remove the border on images inside links in IE 10.
+   */
+  
+  img {
+    border-style: none;
+  }
+  
+  /* Forms
+     ========================================================================== */
+  
+  /**
+   * 1. Change the font styles in all browsers.
+   * 2. Remove the margin in Firefox and Safari.
+   */
+  
+  button,
+  input,
+  optgroup,
+  select,
+  textarea {
+    font-family: inherit; /* 1 */
+    font-size: 100%; /* 1 */
+    line-height: 1.15; /* 1 */
+    margin: 0; /* 2 */
+  }
+  
+  /**
+   * Show the overflow in IE.
+   * 1. Show the overflow in Edge.
+   */
+  
+  button,
+  input { /* 1 */
+    overflow: visible;
+  }
+  
+  /**
+   * Remove the inheritance of text transform in Edge, Firefox, and IE.
+   * 1. Remove the inheritance of text transform in Firefox.
+   */
+  
+  button,
+  select { /* 1 */
+    text-transform: none;
+  }
+  
+  /**
+   * Correct the inability to style clickable types in iOS and Safari.
+   */
+  
+  button,
+  [type="button"],
+  [type="reset"],
+  [type="submit"] {
+    -webkit-appearance: button;
+  }
+  
+  /**
+   * Remove the inner border and padding in Firefox.
+   */
+  
+  button::-moz-focus-inner,
+  [type="button"]::-moz-focus-inner,
+  [type="reset"]::-moz-focus-inner,
+  [type="submit"]::-moz-focus-inner {
+    border-style: none;
+    padding: 0;
+  }
+  
+  /**
+   * Restore the focus styles unset by the previous rule.
+   */
+  
+  button:-moz-focusring,
+  [type="button"]:-moz-focusring,
+  [type="reset"]:-moz-focusring,
+  [type="submit"]:-moz-focusring {
+    outline: 1px dotted ButtonText;
+  }
+  
+  /**
+   * Correct the padding in Firefox.
+   */
+  
+  fieldset {
+    padding: 0.35em 0.75em 0.625em;
+  }
+  
+  /**
+   * 1. Correct the text wrapping in Edge and IE.
+   * 2. Correct the color inheritance from `fieldset` elements in IE.
+   * 3. Remove the padding so developers are not caught out when they zero out
+   *    `fieldset` elements in all browsers.
+   */
+  
+  legend {
+    box-sizing: border-box; /* 1 */
+    color: inherit; /* 2 */
+    display: table; /* 1 */
+    max-width: 100%; /* 1 */
+    padding: 0; /* 3 */
+    white-space: normal; /* 1 */
+  }
+  
+  /**
+   * Add the correct vertical alignment in Chrome, Firefox, and Opera.
+   */
+  
+  progress {
+    vertical-align: baseline;
+  }
+  
+  /**
+   * Remove the default vertical scrollbar in IE 10+.
+   */
+  
+  textarea {
+    overflow: auto;
+  }
+  
+  /**
+   * 1. Add the correct box sizing in IE 10.
+   * 2. Remove the padding in IE 10.
+   */
+  
+  [type="checkbox"],
+  [type="radio"] {
+    box-sizing: border-box; /* 1 */
+    padding: 0; /* 2 */
+  }
+  
+  /**
+   * Correct the cursor style of increment and decrement buttons in Chrome.
+   */
+  
+  [type="number"]::-webkit-inner-spin-button,
+  [type="number"]::-webkit-outer-spin-button {
+    height: auto;
+  }
+  
+  /**
+   * 1. Correct the odd appearance in Chrome and Safari.
+   * 2. Correct the outline style in Safari.
+   */
+  
+  [type="search"] {
+    -webkit-appearance: textfield; /* 1 */
+    outline-offset: -2px; /* 2 */
+  }
+  
+  /**
+   * Remove the inner padding in Chrome and Safari on macOS.
+   */
+  
+  [type="search"]::-webkit-search-decoration {
+    -webkit-appearance: none;
+  }
+  
+  /**
+   * 1. Correct the inability to style clickable types in iOS and Safari.
+   * 2. Change font properties to `inherit` in Safari.
+   */
+  
+  ::-webkit-file-upload-button {
+    -webkit-appearance: button; /* 1 */
+    font: inherit; /* 2 */
+  }
+  
+  /* Interactive
+     ========================================================================== */
+  
+  /*
+   * Add the correct display in Edge, IE 10+, and Firefox.
+   */
+  
+  details {
+    display: block;
+  }
+  
+  /*
+   * Add the correct display in all browsers.
+   */
+  
+  summary {
+    display: list-item;
+  }
+  
+  /* Misc
+     ========================================================================== */
+  
+  /**
+   * Add the correct display in IE 10+.
+   */
+  
+  template {
+    display: none;
+  }
+  
+  /**
+   * Add the correct display in IE 10.
+   */
+  
+  [hidden] {
+    display: none;
+  }
+  /* Custom Cursor */
+  .custom-cursor {
+    width: 24px;
+    height: 24px;
+    border: 2px solid var(--color-gold);
+    border-radius: 50%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    transition: width 0.2s, height 0.2s, background-color 0.2s, opacity 0.2s, transform 0.01s;
+    mix-blend-mode: difference;
+  }
+  
+  .custom-cursor::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 4px;
+    height: 4px;
+    background-color: var(--color-gold);
+    border-radius: 50%;
+    transition: width 0.2s, height 0.2s;
+  }
+  
+  .custom-cursor.hover {
+    width: 40px;
+    height: 40px;
+    background-color: rgba(212, 175, 55, 0.2);
+    mix-blend-mode: normal;
+  }
+  
+  .custom-cursor.hover::after {
+    width: 8px;
+    height: 8px;
+  }
+  
+  .custom-cursor.clicking {
+    transform: translate(-50%, -50%) scale(0.8);
+    opacity: 0.7;
+  }
+  
+  .custom-cursor.hidden {
+    opacity: 0;
+  }
+  
+  @media (max-width: 768px) {
+    .custom-cursor {
+      display: none;
+    }
+    
+    body {
+      cursor: auto;
+    }
+    
+    a, button, [role="button"] {
+      cursor: pointer;
+    }
+  }
+  /* Particle Animation */
+  .particle-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.4;
+  }
+  
+  .particle {
+    position: absolute;
+    background-color: rgba(212, 175, 55, 0.6);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 1;
+  }
+  
+  /* Button Animations */
+  .view-details-btn {
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .view-details-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg, 
+      transparent, 
+      rgba(255, 255, 255, 0.2), 
+      transparent
+    );
+    transition: left 0.7s ease;
+  }
+  
+  .view-details-btn:hover::before {
+    left: 100%;
+  }
+  
+  /* Ring Hover Animation */
+  @keyframes ringPulse {
+    0% {
+      box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.4);
+    }
+    70% {
+      box-shadow: 0 0 0 10px rgba(212, 175, 55, 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(212, 175, 55, 0);
+    }
+  }
+  
+  .ring-item:hover {
+    animation: ringPulse 1.5s infinite;
+  }
+  
+  /* Morph Animation for Modal */
+  @keyframes morphIn {
+    0% {
+      clip-path: circle(0% at 50% 50%);
+    }
+    100% {
+      clip-path: circle(100% at 50% 50%);
+    }
+  }
+  
+  .ring-detail-modal.active {
+    animation: morphIn 0.5s forwards;
+  }
+  
+  /* Text Animation */
+  @keyframes fadeUp {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .hero-title, .hero-subtitle {
+    opacity: 0;
+    animation: fadeUp 1s forwards;
+  }
+  
+  .hero-title {
+    animation-delay: 0.2s;
+  }
+  
+  .hero-subtitle {
+    animation-delay: 0.5s;
+  }
+  
+  /* Ring Item Appear Animation */
+  @keyframes ringAppear {
+    0% {
+      opacity: 0;
+      transform: translateY(50px) rotateY(10deg);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0) rotateY(0);
+    }
+  }
+  
+  .ring-item {
+    opacity: 0;
+    animation: ringAppear 0.8s forwards;
+  }
+  
+  .ring-item:nth-child(1) { animation-delay: 0.1s; }
+  .ring-item:nth-child(2) { animation-delay: 0.2s; }
+  .ring-item:nth-child(3) { animation-delay: 0.3s; }
+  .ring-item:nth-child(4) { animation-delay: 0.4s; }
+  .ring-item:nth-child(5) { animation-delay: 0.5s; }
+  .ring-item:nth-child(6) { animation-delay: 0.6s; }
+  
+  /* Filter Button Animation */
+  .filter-btn {
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .filter-btn::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: var(--color-gold);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+  }
+  
+  .filter-btn:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+  
+  /* Parallax Effect for Ring Items */
+  @keyframes floatAnimation {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-5px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  
+  .ring-item:nth-child(odd) {
+    animation: floatAnimation 5s infinite ease-in-out;
+  }
+  
+  .ring-item:nth-child(even) {
+    animation: floatAnimation 7s infinite ease-in-out;
+    animation-delay: 0.5s;
+  }
+  
+  /* Header Link Animation */
+  .nav-link {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .nav-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(212, 175, 55, 0.1);
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+    z-index: -1;
+  }
+  
+  .nav-link:hover::before {
+    transform: translateY(0);
+  }
+  /* Mobile First Approach */
+  
+  /* Extra Small Devices (phones) */
+  @media (max-width: 575.98px) {
+    html {
+      font-size: 55%;
+    }
+    
+    .site-header {
+      padding: var(--spacing-sm) var(--spacing-md);
+    }
+    
+    .logo {
+      font-size: 2.2rem;
+    }
+    
+    .main-nav {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      background-color: var(--color-dark);
+      padding: var(--spacing-md) 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .main-nav.active {
+      display: block;
+    }
+    
+    .main-nav ul {
+      flex-direction: column;
+      gap: var(--spacing-sm);
+      padding: 0 var(--spacing-lg);
+    }
+    
+    .nav-link {
+      display: block;
+      padding: var(--spacing-sm) 0;
+    }
+    
+    .nav-toggle {
+      display: flex;
+    }
+    
+    .hero {
+      height: auto;
+      min-height: 80vh;
+      padding: var(--spacing-xl) 0;
+    }
+    
+    .hero-title {
+      font-size: 5rem;
+    }
+    
+    .hero-title span {
+      font-size: 7rem;
+    }
+    
+    .filter-container {
+      flex-direction: column;
+      gap: var(--spacing-md);
+      padding: var(--spacing-sm);
+    }
+    
+    .filter-group {
+      width: 100%;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    
+    .filter-group h3 {
+      width: 100%;
+      text-align: center;
+      margin-bottom: var(--spacing-xs);
+    }
+    
+    .rings-container {
+      margin: var(--spacing-md) auto;
+      padding: var(--spacing-md) 0;
+    }
+    
+    .rings-orbit {
+      grid-template-columns: 1fr;
+      gap: var(--spacing-md);
+    }
+    
+    .ring-detail-container {
+      grid-template-columns: 1fr;
+      padding: var(--spacing-md);
+    }
+    
+    .detail-specs {
+      grid-template-columns: 1fr;
+      gap: var(--spacing-sm);
+    }
+    
+    .detail-actions {
+      flex-direction: column;
+      gap: var(--spacing-sm);
+    }
+    
+    .footer-content {
+      grid-template-columns: 1fr;
+      gap: var(--spacing-lg);
+    }
+    
+    .footer-links {
+      grid-template-columns: 1fr;
+      gap: var(--spacing-md);
+    }
+    
+    .footer-bottom {
+      flex-direction: column;
+      gap: var(--spacing-md);
+      text-align: center;
+    }
+  }
+  
+  /* Small Devices (landscape phones) */
+  @media (min-width: 576px) and (max-width: 767.98px) {
+    .main-nav {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      background-color: var(--color-dark);
+      padding: var(--spacing-md) 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .main-nav.active {
+      display: block;
+    }
+    
+    .main-nav ul {
+      flex-direction: column;
+      align-items: center;
+      gap: var(--spacing-sm);
+    }
+    
+    .nav-toggle {
+      display: flex;
+    }
+    
+    .hero-title {
+      font-size: 6rem;
+    }
+    
+    .hero-title span {
+      font-size: 9rem;
+    }
+    
+    .filter-container {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: var(--spacing-md);
+    }
+    
+    .rings-orbit {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .ring-detail-container {
+      grid-template-columns: 1fr;
+    }
+    
+    .footer-content {
+      grid-template-columns: 1fr;
+      gap: var(--spacing-lg);
+    }
+    
+    .footer-links {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  /* Medium Devices (tablets) */
+  @media (min-width: 768px) and (max-width: 991.98px) {
+    .rings-orbit {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .footer-content {
+      grid-template-columns: 1fr 2fr;
+    }
+    
+    .footer-newsletter {
+      grid-column: span 2;
+      margin-top: var(--spacing-lg);
+    }
+  }
+  
+  /* Large Devices (desktops) */
+  @media (min-width: 992px) and (max-width: 1199.98px) {
+    .rings-orbit {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  /* Extra Large Devices (large desktops) */
+  @media (min-width: 1200px) {
+    .rings-orbit {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  /* Hover Effects - Only for devices that support hover */
+  @media (hover: hover) {
+    .ring-item:hover {
+      transform: translateY(-10px) scale(1.02);
+    }
+    
+    .ring-item:hover .ring-image-container img {
+      transform: scale(1.1);
+    }
+    
+    .view-details-btn:hover::before {
+      left: 100%;
+    }
+  }
+  
+  /* No Hover Effects for Touch Devices */
+  @media (hover: none) {
+    .ring-item:hover {
+      transform: none;
+    }
+    
+    .ring-item:hover .ring-image-container img {
+      transform: none;
+    }
+    
+    .ring-item:active {
+      transform: scale(0.98);
+    }
+  }

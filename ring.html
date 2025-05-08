@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="ring.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="custom-cursor"></div>
+<div class="particle-container"></div>
+
+<!-- <header class="site-header">
+  <div class="header-content">
+    <div class="logo">ETHEREAL<span>GEMS</span></div>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="#" class="nav-link">Collections</a></li>
+        <li><a href="#" class="nav-link active">Rings</a></li>
+        <li><a href="#" class="nav-link">Earrings</a></li>
+        <li><a href="#" class="nav-link">Necklaces</a></li>
+        <li><a href="#" class="nav-link">About</a></li>
+      </ul>
+    </nav>
+    <div class="nav-toggle">
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+</header> -->
+
+<main>
+  <section class="hero">
+    <div class="hero-content">
+      <h1 class="hero-title">Beyond Ordinary<br><span>Rings</span></h1>
+      <p class="hero-subtitle">Wearable art crafted from dreams and precious elements</p>
+    </div>
+  </section>
+
+  <section class="ring-showcase">
+    <div class="filter-container">
+      <div class="filter-group">
+        <h3>Style</h3>
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="modern">Modern</button>
+        <button class="filter-btn" data-filter="vintage">Vintage</button>
+        <button class="filter-btn" data-filter="avant-garde">Avant-Garde</button>
+      </div>
+      <div class="filter-group">
+        <h3>Material</h3>
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="gold">Gold</button>
+        <button class="filter-btn" data-filter="platinum">Platinum</button>
+        <button class="filter-btn" data-filter="silver">Silver</button>
+      </div>
+      <div class="filter-group">
+        <h3>Price</h3>
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="luxury">Luxury</button>
+        <button class="filter-btn" data-filter="premium">Premium</button>
+        <button class="filter-btn" data-filter="standard">Standard</button>
+      </div>
+    </div>
+
+    <div class="rings-container">
+      <div class="rings-orbit">
+        <div class="ring-item" data-categories="modern gold premium">
+          <div class="ring-image-container">
+            <img src="https://images.pexels.com/photos/5370706/pexels-photo-5370706.jpeg" alt="Celestial Gold Ring">
+            <div class="ring-hover-effect"></div>
+          </div>
+          <div class="ring-details">
+            <h2>Celestial Orbit</h2>
+            <p class="ring-description">A modernist interpretation of celestial bodies in motion, cast in 18K gold with seven diamonds representing the stars.</p>
+            <div class="ring-meta">
+              <span class="ring-price">$4,200</span>
+              <span class="ring-material">18K Gold</span>
+            </div>
+            <button class="view-details-btn">View Details</button>
+          </div>
+        </div>
+        
+        <div class="ring-item" data-categories="vintage platinum luxury">
+          <div class="ring-image-container">
+            <img src="https://images.pexels.com/photos/9438626/pexels-photo-9438626.jpeg" alt="Empress Platinum Ring">
+            <div class="ring-hover-effect"></div>
+          </div>
+          <div class="ring-details">
+            <h2>Empress Legacy</h2>
+            <p class="ring-description">An heirloom-quality statement piece featuring a 3-carat emerald cut diamond set in platinum with intricate filigree work.</p>
+            <div class="ring-meta">
+              <span class="ring-price">$12,800</span>
+              <span class="ring-material">Platinum</span>
+            </div>
+            <button class="view-details-btn">View Details</button>
+          </div>
+        </div>
+        
+        <div class="ring-item" data-categories="avant-garde silver standard">
+          <div class="ring-image-container">
+            <img src="https://images.pexels.com/photos/10504207/pexels-photo-10504207.jpeg" alt="Quantum Flux Ring">
+            <div class="ring-hover-effect"></div>
+          </div>
+          <div class="ring-details">
+            <h2>Quantum Flux</h2>
+            <p class="ring-description">Breaking conventional form, this sculptural piece creates the illusion of constant movement, crafted in sterling silver.</p>
+            <div class="ring-meta">
+              <span class="ring-price">$890</span>
+              <span class="ring-material">Sterling Silver</span>
+            </div>
+            <button class="view-details-btn">View Details</button>
+          </div>
+        </div>
+        
+        <div class="ring-item" data-categories="modern gold standard">
+          <div class="ring-image-container">
+            <img src="https://images.pexels.com/photos/2735970/pexels-photo-2735970.jpeg" alt="Meridian Gold Ring">
+            <div class="ring-hover-effect"></div>
+          </div>
+          <div class="ring-details">
+            <h2>Meridian</h2>
+            <p class="ring-description">A minimalist design celebrating the beauty of simplicity with a continuous flowing band of 14K gold.</p>
+            <div class="ring-meta">
+              <span class="ring-price">$980</span>
+              <span class="ring-material">14K Gold</span>
+            </div>
+            <button class="view-details-btn">View Details</button>
+          </div>
+        </div>
+        
+        <div class="ring-item" data-categories="avant-garde platinum luxury">
+          <div class="ring-image-container">
+            <img src="https://images.pexels.com/photos/8112262/pexels-photo-8112262.jpeg" alt="Nebula Dream Ring">
+            <div class="ring-hover-effect"></div>
+          </div>
+          <div class="ring-details">
+            <h2>Nebula Dream</h2>
+            <p class="ring-description">A cosmic-inspired masterpiece with black diamonds and sapphires set in platinum to recreate a distant nebula on your finger.</p>
+            <div class="ring-meta">
+              <span class="ring-price">$9,600</span>
+              <span class="ring-material">Platinum</span>
+            </div>
+            <button class="view-details-btn">View Details</button>
+          </div>
+        </div>
+        
+        <div class="ring-item" data-categories="vintage silver premium">
+          <div class="ring-image-container">
+            <img src="https://images.pexels.com/photos/10504197/pexels-photo-10504197.jpeg" alt="Victorian Whisper Ring">
+            <div class="ring-hover-effect"></div>
+          </div>
+          <div class="ring-details">
+            <h2>Victorian Whisper</h2>
+            <p class="ring-description">Inspired by Victorian era craftsmanship, featuring intricate hand-engraved patterns in oxidized sterling silver.</p>
+            <div class="ring-meta">
+              <span class="ring-price">$1,450</span>
+              <span class="ring-material">Sterling Silver</span>
+            </div>
+            <button class="view-details-btn">View Details</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ring-detail-modal">
+    <div class="modal-content">
+      <button class="close-modal">&times;</button>
+      <div class="ring-detail-container">
+        <div class="ring-detail-image">
+          <img src="" alt="Ring Detail">
+          <div class="ring-angle-controls">
+            <button class="angle-btn" data-angle="front">Front</button>
+            <button class="angle-btn" data-angle="side">Side</button>
+            <button class="angle-btn" data-angle="top">Top</button>
+          </div>
+        </div>
+        <div class="ring-detail-info">
+          <h2 class="detail-title"></h2>
+          <p class="detail-description"></p>
+          <div class="detail-specs">
+            <div class="spec-item">
+              <span class="spec-label">Material</span>
+              <span class="spec-value material-value"></span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Gemstone</span>
+              <span class="spec-value gemstone-value"></span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Size Options</span>
+              <span class="spec-value">5-12 US</span>
+            </div>
+          </div>
+          <div class="detail-price"></div>
+          <div class="detail-actions">
+            <button class="add-to-cart">Add to Cart</button>
+            <button class="add-to-wishlist">Add to Wishlist</button>
+          </div>
+          <div class="detail-extras">
+            <div class="extra-item">
+              <h4>Craftsmanship</h4>
+              <p>Each piece is handcrafted by our master jewelers with decades of experience, ensuring exceptional quality and attention to detail.</p>
+            </div>
+            <div class="extra-item">
+              <h4>Care Instructions</h4>
+              <p>To maintain its beauty, clean gently with a soft cloth and mild soap, store separately, and avoid exposure to harsh chemicals.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-content">
+    <div class="footer-logo">ETHEREAL<span>GEMS</span></div>
+    <div class="footer-links">
+      <div class="footer-column">
+        <h3>Collections</h3>
+        <ul>
+          <li><a href="#">Rings</a></li>
+          <li><a href="#">Earrings</a></li>
+          <li><a href="#">Necklaces</a></li>
+          <li><a href="#">Bracelets</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h3>About Us</h3>
+        <ul>
+          <li><a href="#">Our Story</a></li>
+          <li><a href="#">Craftsmanship</a></li>
+          <li><a href="#">Sustainability</a></li>
+          <li><a href="#">Press</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h3>Customer Care</h3>
+        <ul>
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="#">Shipping & Returns</a></li>
+          <li><a href="#">Ring Sizing Guide</a></li>
+          <li><a href="#">Jewelry Care</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-newsletter">
+      <h3>Join Our World</h3>
+      <p>Subscribe to receive exclusive offers and be the first to see new collections.</p>
+      <form class="newsletter-form">
+        <input type="email" placeholder="Your email address" required>
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 Ethereal Gems. All rights reserved.</p>
+    <div class="footer-social">
+      <a href="#" class="social-link">Instagram</a>
+      <a href="#" class="social-link">Pinterest</a>
+      <a href="#" class="social-link">Facebook</a>
+    </div>
+  </div>
+</footer>
+
+<div class="ring-data" style="display: none;">
+  {
+    "Celestial Orbit": {
+      "description": "A modernist interpretation of celestial bodies in motion, cast in 18K gold with seven diamonds representing the stars. The interlocking circles create a sense of perpetual movement, symbolizing the infinite nature of the cosmos.",
+      "material": "18K Gold",
+      "gemstone": "Seven 0.15ct VVS Diamonds",
+      "price": "$4,200",
+      "angles": {
+        "front": "https://images.pexels.com/photos/5370706/pexels-photo-5370706.jpeg",
+        "side": "https://images.pexels.com/photos/8128172/pexels-photo-8128172.jpeg",
+        "top": "https://images.pexels.com/photos/5370658/pexels-photo-5370658.jpeg"
+      }
+    },
+    "Empress Legacy": {
+      "description": "An heirloom-quality statement piece featuring a 3-carat emerald cut diamond set in platinum with intricate filigree work. Designed to be passed down through generations, this ring embodies timeless elegance with vintage-inspired detailing.",
+      "material": "Platinum",
+      "gemstone": "3ct Emerald Cut Diamond (VS1, F Color)",
+      "price": "$12,800",
+      "angles": {
+        "front": "https://images.pexels.com/photos/9438626/pexels-photo-9438626.jpeg",
+        "side": "https://images.pexels.com/photos/9438627/pexels-photo-9438627.jpeg",
+        "top": "https://images.pexels.com/photos/5370689/pexels-photo-5370689.jpeg"
+      }
+    },
+    "Quantum Flux": {
+      "description": "Breaking conventional form, this sculptural piece creates the illusion of constant movement, crafted in sterling silver. The asymmetrical design challenges traditional jewelry norms, creating a piece that changes appearance from every angle.",
+      "material": "Sterling Silver",
+      "gemstone": "None - Sculptural Design",
+      "price": "$890",
+      "angles": {
+        "front": "https://images.pexels.com/photos/10504207/pexels-photo-10504207.jpeg",
+        "side": "https://images.pexels.com/photos/10504208/pexels-photo-10504208.jpeg",
+        "top": "https://images.pexels.com/photos/10504210/pexels-photo-10504210.jpeg"
+      }
+    },
+    "Meridian": {
+      "description": "A minimalist design celebrating the beauty of simplicity with a continuous flowing band of 14K gold. Inspired by the concept of meridian lines, this ring represents the harmony of perfect proportion and the elegance of restraint.",
+      "material": "14K Gold",
+      "gemstone": "None - Minimalist Design",
+      "price": "$980",
+      "angles": {
+        "front": "https://images.pexels.com/photos/2735970/pexels-photo-2735970.jpeg",
+        "side": "https://images.pexels.com/photos/9438639/pexels-photo-9438639.jpeg",
+        "top": "https://images.pexels.com/photos/5370673/pexels-photo-5370673.jpeg"
+      }
+    },
+    "Nebula Dream": {
+      "description": "A cosmic-inspired masterpiece with black diamonds and sapphires set in platinum to recreate a distant nebula on your finger. The arrangement of stones mimics the swirling gases and stars of deep space, creating a mesmerizing effect.",
+      "material": "Platinum",
+      "gemstone": "Black Diamonds and Blue Sapphires",
+      "price": "$9,600",
+      "angles": {
+        "front": "https://images.pexels.com/photos/8112262/pexels-photo-8112262.jpeg",
+        "side": "https://images.pexels.com/photos/8112189/pexels-photo-8112189.jpeg",
+        "top": "https://images.pexels.com/photos/5370693/pexels-photo-5370693.jpeg"
+      }
+    },
+    "Victorian Whisper": {
+      "description": "Inspired by Victorian era craftsmanship, featuring intricate hand-engraved patterns in oxidized sterling silver. This ring tells a story through its detailed motifs, connecting the wearer to a rich tradition of metalwork artistry.",
+      "material": "Sterling Silver (Oxidized)",
+      "gemstone": "Small Rose-Cut Diamonds",
+      "price": "$1,450",
+      "angles": {
+        "front": "https://images.pexels.com/photos/10504197/pexels-photo-10504197.jpeg",
+        "side": "https://images.pexels.com/photos/10504199/pexels-photo-10504199.jpeg",
+        "top": "https://images.pexels.com/photos/10504206/pexels-photo-10504206.jpeg"
+      }
+    }
+  }
+</div>
+<script src="ring.js"></script>
+</body>
+</html>

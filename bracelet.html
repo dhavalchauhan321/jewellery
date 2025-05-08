@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Luxe | Elegant Bracelet Collections</title>
+  <link rel="stylesheet" href="bracelet.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;500;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="cursor"></div>
+  <div class="cursor-follower"></div>
+
+  <header>
+    <div class="header-container">
+      <div class="logo">
+        <h1>Luxe</h1>
+      </div>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#home" class="active">Home</a></li>
+          <li><a href="#collections">Collections</a></li>
+          <li><a href="#featured">Featured</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="header-icons">
+        <a href="#search"><i class="fas fa-search"></i></a>
+        <a href="#account"><i class="fas fa-user"></i></a>
+        <a href="#cart" class="cart-icon"><i class="fas fa-shopping-bag"></i><span class="cart-count">0</span></a>
+      </div>
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-nav">
+    <div class="mobile-nav-container">
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#collections">Collections</a></li>
+        <li><a href="#featured">Featured</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="mobile-nav-footer">
+        <a href="#search"><i class="fas fa-search"></i></a>
+        <a href="#account"><i class="fas fa-user"></i></a>
+        <a href="#cart"><i class="fas fa-shopping-bag"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="hero-content">
+        <h1 class="animate-on-scroll fade-up">Timeless Elegance</h1>
+        <p class="animate-on-scroll fade-up delay-1">Discover our exquisite bracelet collections, handcrafted with precision and passion.</p>
+        <a href="#collections" class="btn animate-on-scroll fade-up delay-2">Explore Collections</a>
+      </div>
+      <div class="hero-image">
+        <img src="https://images.pexels.com/photos/1413420/pexels-photo-1413420.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Elegant bracelet on wrist">
+      </div>
+      <div class="scroll-indicator">
+        <span>Scroll</span>
+        <i class="fas fa-chevron-down"></i>
+      </div>
+    </section>
+
+    <section id="collections" class="collections">
+      <div class="section-header">
+        <h2 class="animate-on-scroll fade-up">Our Collections</h2>
+        <p class="animate-on-scroll fade-up delay-1">Each piece tells a unique story of craftsmanship and elegance</p>
+      </div>
+      <div class="filter-tabs animate-on-scroll fade-up delay-2">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="gold">Gold</button>
+        <button class="filter-btn" data-filter="silver">Silver</button>
+        <button class="filter-btn" data-filter="rosegold">Rose Gold</button>
+        <button class="filter-btn" data-filter="gemstone">Gemstone</button>
+      </div>
+      <div class="products-grid">
+        <div class="product-card animate-on-scroll fade-up" data-category="gold">
+          <div class="product-image">
+            <img src="https://images.pexels.com/photos/1191531/pexels-photo-1191531.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Gold Chain Bracelet">
+            <div class="product-overlay">
+              <a href="#" class="view-product">Quick View</a>
+            </div>
+          </div>
+          <div class="product-info">
+            <h3>Athena Gold Chain</h3>
+            <p>$249.00</p>
+            <div class="product-actions">
+              <button class="add-to-cart"><i class="fas fa-shopping-bag"></i> Add to Cart</button>
+              <button class="add-to-wishlist"><i class="far fa-heart"></i></button>
+            </div>
+          </div>
+        </div>
+        <div class="product-card animate-on-scroll fade-up delay-1" data-category="silver">
+          <div class="product-image">
+            <img src="https://images.pexels.com/photos/9428768/pexels-photo-9428768.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Silver Bangle Bracelet">
+            <div class="product-overlay">
+              <a href="#" class="view-product">Quick View</a>
+            </div>
+          </div>
+          <div class="product-info">
+            <h3>Luna Silver Bangle</h3>
+            <p>$189.00</p>
+            <div class="product-actions">
+              <button class="add-to-cart"><i class="fas fa-shopping-bag"></i> Add to Cart</button>
+              <button class="add-to-wishlist"><i class="far fa-heart"></i></button>
+            </div>
+          </div>
+        </div>
+        <div class="product-card animate-on-scroll fade-up delay-2" data-category="rosegold">
+          <div class="product-image">
+            <img src="https://images.pexels.com/photos/1616096/pexels-photo-1616096.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Rose Gold Bracelet">
+            <div class="product-overlay">
+              <a href="#" class="view-product">Quick View</a>
+            </div>
+          </div>
+          <div class="product-info">
+            <h3>Aurora Rose Gold Cuff</h3>
+            <p>$219.00</p>
+            <div class="product-actions">
+              <button class="add-to-cart"><i class="fas fa-shopping-bag"></i> Add to Cart</button>
+              <button class="add-to-wishlist"><i class="far fa-heart"></i></button>
+            </div>
+          </div>
+        </div>
+        <div class="product-card animate-on-scroll fade-up delay-3" data-category="gemstone">
+          <div class="product-image">
+            <img src="https://images.pexels.com/photos/10969048/pexels-photo-10969048.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Sapphire Bracelet">
+            <div class="product-overlay">
+              <a href="#" class="view-product">Quick View</a>
+            </div>
+          </div>
+          <div class="product-info">
+            <h3>Celestial Sapphire Link</h3>
+            <p>$329.00</p>
+            <div class="product-actions">
+              <button class="add-to-cart"><i class="fas fa-shopping-bag"></i> Add to Cart</button>
+              <button class="add-to-wishlist"><i class="far fa-heart"></i></button>
+            </div>
+          </div>
+        </div>
+        <div class="product-card animate-on-scroll fade-up" data-category="gold">
+          <div class="product-image">
+            <img src="https://images.pexels.com/photos/10969091/pexels-photo-10969091.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Gold Diamond Bracelet">
+            <div class="product-overlay">
+              <a href="#" class="view-product">Quick View</a>
+            </div>
+          </div>
+          <div class="product-info">
+            <h3>Soleil Gold Diamond</h3>
+            <p>$459.00</p>
+            <div class="product-actions">
+              <button class="add-to-cart"><i class="fas fa-shopping-bag"></i> Add to Cart</button>
+              <button class="add-to-wishlist"><i class="far fa-heart"></i></button>
+            </div>
+          </div>
+        </div>
+        <div class="product-card animate-on-scroll fade-up delay-1" data-category="silver">
+          <div class="product-image">
+            <img src="https://images.pexels.com/photos/1035683/pexels-photo-1035683.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Silver Charm Bracelet">
+            <div class="product-overlay">
+              <a href="#" class="view-product">Quick View</a>
+            </div>
+          </div>
+          <div class="product-info">
+            <h3>Lyra Silver Charm</h3>
+            <p>$199.00</p>
+            <div class="product-actions">
+              <button class="add-to-cart"><i class="fas fa-shopping-bag"></i> Add to Cart</button>
+              <button class="add-to-wishlist"><i class="far fa-heart"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="view-all-container animate-on-scroll fade-up">
+        <a href="#" class="btn-outline">View All Collections</a>
+      </div>
+    </section>
+
+    <section id="featured" class="featured">
+      <div class="featured-content">
+        <div class="section-header">
+          <h2 class="animate-on-scroll fade-up">Featured Collection</h2>
+          <p class="animate-on-scroll fade-up delay-1">Our signature Celestial series combines timeless design with modern elegance</p>
+        </div>
+        <div class="featured-details animate-on-scroll fade-up delay-2">
+          <h3>The Celestial Collection</h3>
+          <p>Inspired by the cosmic wonders of the night sky, our Celestial Collection features intricate designs that capture the essence of stars, moons, and celestial bodies. Each piece is meticulously crafted using ethically sourced materials and finished with precision.</p>
+          <a href="#" class="btn">Discover More</a>
+        </div>
+      </div>
+      <div class="featured-image animate-on-scroll fade-left">
+        <img src="https://images.pexels.com/photos/1516386/pexels-photo-1516386.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Featured Bracelet Collection">
+      </div>
+    </section>
+
+    <section id="about" class="about">
+      <div class="about-image animate-on-scroll fade-right">
+        <img src="https://images.pexels.com/photos/6068960/pexels-photo-6068960.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Jewelry crafting">
+      </div>
+      <div class="about-content">
+        <div class="section-header">
+          <h2 class="animate-on-scroll fade-up">Our Story</h2>
+          <p class="animate-on-scroll fade-up delay-1">Crafting elegance since 2010</p>
+        </div>
+        <div class="about-details animate-on-scroll fade-up delay-2">
+          <p>At Luxe, we believe that jewelry is more than an accessory—it's an expression of personality, a symbol of milestones, and a treasure to be passed down through generations.</p>
+          <p>Our journey began with a passion for creating pieces that combine classic craftsmanship with contemporary design. Each bracelet in our collection is meticulously handcrafted by skilled artisans using ethically sourced materials.</p>
+          <p>We take pride in our attention to detail, commitment to quality, and dedication to creating jewelry that not only looks beautiful but also tells a story.</p>
+          <a href="#" class="btn-outline">Learn More About Us</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="instagram" class="instagram">
+      <div class="section-header">
+        <h2 class="animate-on-scroll fade-up">Follow Our Journey</h2>
+        <p class="animate-on-scroll fade-up delay-1">@luxe_jewelry</p>
+      </div>
+      <div class="instagram-grid">
+        <div class="instagram-item animate-on-scroll fade-up">
+          <img src="https://images.pexels.com/photos/12051525/pexels-photo-12051525.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Instagram post">
+          <div class="instagram-overlay">
+            <i class="fab fa-instagram"></i>
+          </div>
+        </div>
+        <div class="instagram-item animate-on-scroll fade-up delay-1">
+          <img src="https://images.pexels.com/photos/1036623/pexels-photo-1036623.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Instagram post">
+          <div class="instagram-overlay">
+            <i class="fab fa-instagram"></i>
+          </div>
+        </div>
+        <div class="instagram-item animate-on-scroll fade-up delay-2">
+          <img src="https://images.pexels.com/photos/1454171/pexels-photo-1454171.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Instagram post">
+          <div class="instagram-overlay">
+            <i class="fab fa-instagram"></i>
+          </div>
+        </div>
+        <div class="instagram-item animate-on-scroll fade-up delay-3">
+          <img src="https://images.pexels.com/photos/9428835/pexels-photo-9428835.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Instagram post">
+          <div class="instagram-overlay">
+            <i class="fab fa-instagram"></i>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="newsletter" class="newsletter">
+      <div class="newsletter-container">
+        <div class="section-header">
+          <h2 class="animate-on-scroll fade-up">Join Our Mailing List</h2>
+          <p class="animate-on-scroll fade-up delay-1">Subscribe to receive updates on new collections, exclusive offers, and styling inspiration</p>
+        </div>
+        <form class="newsletter-form animate-on-scroll fade-up delay-2">
+          <div class="form-group">
+            <input type="email" placeholder="Your Email Address" required>
+            <button type="submit" class="btn">Subscribe</button>
+          </div>
+          <p class="form-disclaimer">By subscribing, you agree to our Privacy Policy and consent to receive updates from Luxe.</p>
+        </form>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <div class="contact-container">
+        <div class="section-header">
+          <h2 class="animate-on-scroll fade-up">Get In Touch</h2>
+          <p class="animate-on-scroll fade-up delay-1">We'd love to hear from you</p>
+        </div>
+        <div class="contact-content">
+          <div class="contact-info animate-on-scroll fade-up delay-2">
+            <div class="contact-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <div>
+                <h3>Visit Our Store</h3>
+                <p>123 Jewelry Lane, New York, NY 10001</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-envelope"></i>
+              <div>
+                <h3>Email Us</h3>
+                <p>hello@luxejewelry.com</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-phone"></i>
+              <div>
+                <h3>Call Us</h3>
+                <p>+1 (212) 555-7890</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <i class="far fa-clock"></i>
+              <div>
+                <h3>Store Hours</h3>
+                <p>Monday - Saturday: 10am - 7pm<br>Sunday: 12pm - 5pm</p>
+              </div>
+            </div>
+          </div>
+          <form class="contact-form animate-on-scroll fade-up delay-3">
+            <div class="form-group">
+              <input type="text" placeholder="Your Name" required>
+            </div>
+            <div class="form-group">
+              <input type="email" placeholder="Your Email" required>
+            </div>
+            <div class="form-group">
+              <input type="text" placeholder="Subject">
+            </div>
+            <div class="form-group">
+              <textarea placeholder="Your Message" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="btn">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="cart-sidebar">
+    <div class="cart-header">
+      <h3>Your Shopping Cart</h3>
+      <button class="close-cart"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="cart-items">
+      <!-- Cart items will be added here dynamically -->
+      <div class="empty-cart">
+        <i class="fas fa-shopping-bag"></i>
+        <p>Your cart is empty</p>
+        <a href="#collections" class="btn-outline">Start Shopping</a>
+      </div>
+    </div>
+    <div class="cart-footer">
+      <div class="cart-total">
+        <span>Total:</span>
+        <span>$0.00</span>
+      </div>
+      <button class="btn checkout-btn">Proceed to Checkout</button>
+    </div>
+  </div>
+  <div class="cart-overlay"></div>
+
+  <div class="product-modal">
+    <div class="modal-content">
+      <button class="close-modal"><i class="fas fa-times"></i></button>
+      <div class="modal-product">
+        <div class="modal-product-image">
+          <img src="https://images.pexels.com/photos/1191531/pexels-photo-1191531.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Gold Chain Bracelet">
+          <div class="product-gallery-nav">
+            <button class="gallery-prev"><i class="fas fa-chevron-left"></i></button>
+            <button class="gallery-next"><i class="fas fa-chevron-right"></i></button>
+          </div>
+        </div>
+        <div class="modal-product-info">
+          <h2>Athena Gold Chain</h2>
+          <p class="product-price">$249.00</p>
+          <div class="product-rating">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+            <span>(24 reviews)</span>
+          </div>
+          <p class="product-description">Elegant 18K gold-plated chain bracelet with a delicate clasp. Perfect for everyday wear or special occasions.</p>
+          <div class="product-meta">
+            <p><strong>Material:</strong> 18K Gold-Plated Brass</p>
+            <p><strong>Length:</strong> Adjustable (16-19cm)</p>
+            <p><strong>Clasp:</strong> Lobster</p>
+          </div>
+          <div class="product-actions">
+            <div class="quantity-selector">
+              <button class="quantity-decrease">-</button>
+              <input type="number" value="1" min="1" max="10">
+              <button class="quantity-increase">+</button>
+            </div>
+            <button class="btn add-to-cart-btn"><i class="fas fa-shopping-bag"></i> Add to Cart</button>
+            <button class="btn-outline wishlist-btn"><i class="far fa-heart"></i> Save</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal-overlay"></div>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-column">
+        <div class="footer-logo">
+          <h2>Luxe</h2>
+        </div>
+        <p>Elegant bracelets crafted with passion and precision for the modern woman.</p>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-pinterest-p"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+      <div class="footer-column">
+        <h3>Shop</h3>
+        <ul>
+          <li><a href="#">All Collections</a></li>
+          <li><a href="#">New Arrivals</a></li>
+          <li><a href="#">Best Sellers</a></li>
+          <li><a href="#">Special Offers</a></li>
+          <li><a href="#">Gift Cards</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h3>About</h3>
+        <ul>
+          <li><a href="#">Our Story</a></li>
+          <li><a href="#">Craftsmanship</a></li>
+          <li><a href="#">Sustainability</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Press</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h3>Customer Care</h3>
+        <ul>
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="#">FAQs</a></li>
+          <li><a href="#">Shipping & Returns</a></li>
+          <li><a href="#">Care Instructions</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Luxe. All rights reserved.</p>
+      <div class="payment-icons">
+        <i class="fab fa-cc-visa"></i>
+        <i class="fab fa-cc-mastercard"></i>
+        <i class="fab fa-cc-amex"></i>
+        <i class="fab fa-cc-paypal"></i>
+        <i class="fab fa-cc-apple-pay"></i>
+      </div>
+    </div>
+  </footer>
+
+  <script src="bracelet.js"></script>
+</body>
+</html>

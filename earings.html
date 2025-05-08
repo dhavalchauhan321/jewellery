@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Luxury Earrings Collection | Fine Jewelry</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="earings.css">
+</head>
+<body>
+  <section class="earrings-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Exquisite Earrings</h2>
+        <p>Discover our handcrafted collection, where timeless elegance meets contemporary design.</p>
+      </div>
+
+      <!-- Featured Product -->
+      <div class="featured-product">
+        <div class="featured-image">
+          <img src="https://images.pexels.com/photos/1413420/pexels-photo-1413420.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Featured Diamond Earrings">
+        </div>
+        <div class="featured-content">
+          <div class="animate-fade-in">
+            <div class="gold-line"></div>
+            <h3>The Celestial Collection</h3>
+            <h2>Diamond Starburst Earrings</h2>
+            <p>
+              Inspired by cosmic phenomena, our Diamond Starburst earrings feature 
+              ethically sourced diamonds set in 18k gold. Crafted to catch light at 
+              every angle, these statement pieces elevate any ensemble.
+            </p>
+            <div class="button-group">
+              <button class="btn-primary">Shop Now</button>
+              <button class="btn-secondary">
+                View Collection
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 12h14m-7-7 7 7-7 7"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Filter Toggle -->
+      <button class="filter-toggle" id="filterToggle">
+        Filter by Category
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="m6 9 6 6 6-6"/>
+        </svg>
+      </button>
+
+      <div class="content-wrapper">
+        <!-- Category Filter -->
+        <div class="category-filter" id="categoryFilter">
+          <h3>Categories</h3>
+          <ul>
+            <li><button class="active" data-category="all">All Earrings</button></li>
+            <li><button data-category="studs">Studs</button></li>
+            <li><button data-category="hoops">Hoops</button></li>
+            <li><button data-category="drops">Drop Earrings</button></li>
+            <li><button data-category="chandelier">Chandelier</button></li>
+            <li><button data-category="pearl">Pearl Earrings</button></li>
+            <li><button data-category="gold">Gold Collection</button></li>
+            <li><button data-category="silver">Silver Collection</button></li>
+          </ul>
+        </div>
+
+        <!-- Products Grid -->
+        <div class="products-grid" id="productsGrid"></div>
+      </div>
+    </div>
+  </section>
+  <script src="earings.js"></script>
+</body>
+</html>

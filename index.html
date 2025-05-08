@@ -9,11 +9,14 @@
   <link rel="stylesheet" href="slider.css">
   <link rel="stylesheet" href="gallary.css">
   <link rel="stylesheet" href="signup.css">
+  <link rel="stylesheet" href="client.css">
 
-  <!-- <link rel="stylesheet" href="client.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet"> -->
+
+  <link rel="stylesheet" href="footer.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+  
+
+  
   
 
   <!-- <script src="script.js"></script> -->
@@ -41,9 +44,9 @@
           <a href="#">Collections <i class="fas fa-chevron-down"></i></a>
           <ul class="dropdown-menu">
             <li><a href="necklaces.html">Necklaces</a></li>
-            <li><a href="#">Rings</a></li>
-            <li><a href="#">Bracelets</a></li>
-            <li><a href="#">Earrings</a></li>
+            <li><a href="ring.html">Rings</a></li>
+            <li><a href="bracelet.html">Bracelets</a></li>
+            <li><a href="earings.html">Earrings</a></li>
           </ul>
         </li>
         <li><a href="about.html">About</a></li>
@@ -52,7 +55,8 @@
 
       <div class="nav-icons">
         <div class="search-box">
-          <input type="text" placeholder="Search...">
+  
+  <input type="text" placeholder="Search..."  style=" background: linear-gradient(to right, #f6f2f2, #ffe6e6 , #ebb195);border:none;">
           <i class="fas fa-search"></i>
         </div>
         <i class="fas fa-shopping-cart cart-icon"></i>
@@ -106,9 +110,7 @@
             </div>
         </div>
 
-        <footer class="footer">
-            <p>Discover our exclusive collection of fine jewelry © 2025</p>
-        </footer>
+       
     </div>
 </div>
 
@@ -148,6 +150,28 @@
 
 <br><br>
 
+<!-- client testimonial  -->
+<div class="client-container">
+    
+
+  <section class="client-section">
+    <div class="client-container">
+      <header class="section-header">
+        <h2>Client Testimonials</h2>
+        <p>Discover what our distinguished clients say about their experience with our exquisite jewelry collection.</p>
+      </header>
+
+      <div class="client-grid" id="clientGrid">
+        <!-- Client testimonials will be inserted here by JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <footer class="main-footer">
+    <p>©2025 Luxe Gems | Handcrafted with passion and precision</p>
+  </footer>
+</div>
+<br><br>
 
 <!-- signup -->
 <section class="signup-section">
@@ -163,8 +187,168 @@
     <p class="small-text">Already have an account? <a href="#">Login</a></p>
   </div>
 </section>
-<br>
-<br>
+<br><br><br>
+
+
+<!-- footer start  -->
+  <!-- Footer -->
+  <footer class="footer">
+    <!-- Decorative elements -->
+    <div class="footer-border"></div>
+    <div class="footer-glow footer-glow-1"></div>
+    <div class="footer-glow footer-glow-2"></div>
+    
+    <!-- Shimmer effect -->
+    <div class="shimmer-container">
+      <div class="shimmer"></div>
+    </div>
+    
+    <div class="container">
+      <div class="footer-header">
+        <h2 class="footer-title">LUXE JEWELS</h2>
+        <p class="footer-subtitle">
+          Timeless elegance crafted with precision and passion.
+        </p>
+      </div>
+      
+      <div class="footer-content reveal-section">
+        <!-- Newsletter Section -->
+        <div class="footer-newsletter">
+          <h3 class="newsletter-title">Join Our Collection</h3>
+          <p class="newsletter-description">
+            Subscribe to receive updates on new arrivals, special offers, and jewelry care tips.
+          </p>
+          
+          <form id="newsletterForm" class="newsletter-form">
+            <div class="input-wrapper">
+              <input
+                type="email"
+                id="emailInput"
+                placeholder="Your email address"
+                required
+              />
+              <button type="submit" aria-label="Subscribe">
+                <i class="icon-send"></i>
+              </button>
+            </div>
+            <div class="input-border"></div>
+          </form>
+          
+          <div id="subscriptionSuccess" class="subscription-success hidden">
+            <p>Thank you for subscribing!</p>
+          </div>
+          
+          <p class="privacy-notice">
+            By subscribing, you agree to our Privacy Policy and consent to receive updates.
+          </p>
+        </div>
+
+        <!-- Navigation Section -->
+        <nav class="footer-nav">
+          <div class="nav-group">
+            <h3>Collections</h3>
+            <ul>
+              <li><a href="#">New Arrivals</a></li>
+              <li><a href="#">Necklaces</a></li>
+              <li><a href="#">Rings</a></li>
+              <li><a href="#">Earrings</a></li>
+              <li><a href="#">Bracelets</a></li>
+            </ul>
+          </div>
+          
+          <div class="nav-group">
+            <h3>Customer Care</h3>
+            <ul>
+              <li><a href="#">Contact Us</a></li>
+              <li><a href="#">Shipping & Returns</a></li>
+              <li><a href="#">Care Guide</a></li>
+              <li><a href="#">Size Guide</a></li>
+              <li><a href="#">FAQ</a></li>
+            </ul>
+          </div>
+          
+          <div class="nav-group">
+            <h3>About</h3>
+            <ul>
+              <li><a href="#">Our Story</a></li>
+              <li><a href="#">Craftsmanship</a></li>
+              <li><a href="#">Sustainability</a></li>
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">Careers</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+      
+      <!-- Social Media Section -->
+      <div class="footer-social">
+        <h3>Follow Our Sparkle</h3>
+        <div class="social-icons">
+          <a href="#" class="social-icon" aria-label="Instagram">
+          <div class="icon-div">
+            <img src="https://img.icons8.com/?size=100&id=32292&format=png&color=ffffff" alt="" class="icon">
+          </div>  
+            <span class="icon-label">Instagram</span>
+          </a>
+          <a href="#" class="social-icon" aria-label="Facebook">
+            <img src="https://img.icons8.com/?size=100&id=118468&format=png&color=ffffff" alt="" class="icon">
+            <span class="icon-label">Facebook</span>
+          </a>
+          <a href="#" class="social-icon" aria-label="Pinterest">
+           <img src="https://img.icons8.com/?size=100&id=s5uCR5hGSJlO&format=png&color=ffffff" alt="" class="icon">
+            <span class="icon-label">Pinterest</span>
+          </a>
+          <a href="#" class="social-icon" aria-label="Twitter">
+           <img src="https://img.icons8.com/?size=100&id=fJp7hepMryiw&format=png&color=ffffff" alt="" class="icon">
+            <span class="icon-label">Twitter</span>
+          </a>
+          <a href="#" class="social-icon" aria-label="YouTube">
+            <img src="https://img.icons8.com/?size=100&id=37325&format=png&color=ffffff" alt="" class="icon">
+            <span class="icon-label">YouTube</span>
+          </a>
+        </div>
+      </div>
+      
+      <!-- Copyright Section -->
+      <div class="footer-copyright">
+        <div class="copyright-content">
+          <div class="payment-methods">
+            <div class="secure-payment">
+              <i class="icon-shield"></i>
+              <span>Secure Payment</span>
+            </div>
+            <div class="payment-icons">
+              <i class="icon-credit-card"></i>
+            </div>
+          </div>
+          
+          <div class="contact-info">
+            <a href="#" class="contact-item">
+              <i class="icon-map-pin"></i>
+              <span>Tanvi Chauhan</span>
+            </a>
+            <a href="tel:+1234567890" class="contact-item">
+              <i class="icon-phone"></i>
+              <span>8469996396</span>
+            </a>
+            <a href="mailto:contact@luxejewels.com" class="contact-item">
+              <i class="icon-mail"></i>
+              <span>cchauhantanvi@gmail.com</span>
+            </a>
+          </div>
+        </div>
+        
+        <div class="copyright-text">
+          <p>© <span id="currentYear"></span> Luxe Jewels. All rights reserved. Handcrafted with passion and precision.</p>
+          <div class="legal-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+            <a href="#">Shipping Policy</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
 
 
 
@@ -183,6 +367,8 @@
 <script src="script.js"></script>
 <script src="gallary.js"></script>
 <script src="signup.js"></script>
+<script src="client.js"></script>
+<script src="footer.js"></script>
 
 
 </body>
